@@ -1,0 +1,87 @@
+.encabezado {
+    border-bottom: 2px solid black; /* Aplica solo al borde inferior */
+    text-align: center;
+    padding-bottom: 8px;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    margin: 0;
+}
+
+.icon{
+    width: 60px;
+    float: left;
+    margin-right: 50px;
+}
+
+.menuIcon{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 5px;
+    background-image: url('../assets/avatarPFP.png');
+    background-size: 60px 60px;
+    background-position:center;
+    float: left;
+    border: none;
+    background-color: white;
+}
+
+.pfp{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 0;
+} 
+
+.busqueda {
+    flex: 1; /* Permite que el input ocupe espacio disponible */
+    max-width: 300px; /* Ancho máximo del input */
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 200px; /* Espaciado después del botón chart */
+  }
+
+.darkMode{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 5px;
+    background-image: url('../assets/dark.png');
+    background-size: 60px 60px;
+    background-position:center;
+    float: left;
+    margin-left: 10px;
+    margin-right: 0px;
+    border: none;
+    background-color: white;
+}
+
+.chart{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-image: url('../assets/chart.png');
+    background-size: 60px 60px;
+    background-position:center;
+    float: left;
+    margin-left: 70px;
+    margin-right: 0px;
+    border: none;
+    background-color: white;
+}
+h2{
+    margin-right: 50px;
+    align-items: center;
+    margin-left: 400px;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    text-align: center;
+    margin: 0
+}
