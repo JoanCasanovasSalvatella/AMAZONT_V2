@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div [ngClass]="{'enlaces' : 'enlace'}">
+        <!--Botones de enlace a las ventanas Categoria y Ventas-->
+        <button [ngClass]="{'mainBtn' : 'mainBtn1'}">Categorias</button>
+        <button [ngClass]="{'mainBtn' : 'mainBtn1'}">Ventas</button>
+    </div>
+
+    <!--Imagen que rellena toda la longitud de la pagina-->
+    <img src="assets/menuImg" alt="" [ngClass]="{'menuImg' : 'imagen1'}">
+
+    <div [ngClass]="{'categorias' : 'categoria'}">
+    <!--Botones que enlazan con cada categoria-->
+        <button [ngClass]="{'catBtn' : 'catBtn1'}"><img src="assets/pcIcon" alt="" [ngClass]="{'catImg' : 'catImg1'}">Informatica</button>
+        <button [ngClass]="{'catBtn' : 'catBtn1'}"><img src="assets/hogarIcon.jpg" alt="" [ngClass]="{'catImg' : 'catImg1'}">Hogar</button>
+        <button [ngClass]="{'catBtn' : 'catBtn1'}"><img src="assets/fitnessIcon.jpg" alt="" [ngClass]="{'catImg' : 'catImg1'}">Deportes</button>
+    </div>
+
+    <!--Listado de productos destacados-->
+    <h4>Nuestros productos destacados</h4>
+    <div [ngClass]="{'listaProd' : 'lista'}">
+    @for (item of productos; track $index) {
+        <div class="prod">
+            <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
+            <h3>{{item.nombre}}</h3>
+            <h4>{{item.desc}}</h4>
+            <h4 [ngClass]="{'precio': 'price1'}">{{item.precio}}</h4>
+        </div>
+      }
+    </div>
+</body>
+</html>

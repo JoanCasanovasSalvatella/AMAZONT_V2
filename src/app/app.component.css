@@ -1,0 +1,119 @@
+.encabezado {
+    border-bottom: 1px solid black; 
+    text-align: center;
+    height: 80px;
+    align-items: center;
+    display: flex;
+    background-color: white;
+    margin: 0; 
+    padding: 0; 
+    justify-content: space-between;
+    padding: 10px;
+    color: black;
+}
+
+.icon{
+    width: 60px;
+    float: left;
+    margin-right: 50px;
+    max-width: 60%;
+}
+
+.menuIcon{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 5px;
+    background-image: url('../assets/avatarPFP.png');
+    background-size: 60px 60px;
+    background-position:center;
+    float: left;
+    border: none;
+    background-color: white;
+}
+
+.pfp{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 0;
+} 
+
+.busqueda {
+    flex: 1; /* Permite que el input ocupe espacio disponible */
+    max-width: 300px; /* Ancho máximo del input */
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    margin-left: 200px; /* Espaciado después del botón chart */
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+
+.darkMode{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 5px;
+    background-image: url('../assets/dark.png');
+    background-size: 60px 60px;
+    background-position:center;
+    float: left;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+.chart{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-image: url('../assets/chart.png');
+    background-size: 60px 60px;
+    background-position:center;
+    float: left;
+    margin-left: 70px;
+    margin-right: 0px;
+    border: none;
+    background-color: white;
+}
+h2{
+    margin-right: 50px;
+    align-items: center;
+    margin-left: 400px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0; 
+    padding: 0;
+}
+
+div.dark{
+    background-color: #303030;
+}
+
+.dark_mode{
+    background-color: #4B4B4B;
+}
+
+@media (max-width: 600px) {
+    .encabezado { 
+        flex-direction: column;
+        align-items: flex-start;
+    } 
+
+    .icon, h2, .busqueda {
+        margin-bottom: 10px;
+    } 
+
+    .menuIcon, .darkMode, .chart {
+        width: 100%;
+        margin: 5px 0; 
+    } 
+}
