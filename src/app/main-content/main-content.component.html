@@ -34,5 +34,18 @@
         </div>
       }
     </div>
+
+    <!--Listado de productos destacados-->
+    <h4>Ofertas y novedades</h4>
+    <div [ngClass]="{'listaProd2' : 'lista'}">
+    @for (item of productos; track $index) {
+        <div class="prod">
+            <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
+            <h3>{{item.nombre}}</h3>
+            <h4>{{item.desc}}</h4>
+            <h4 [ngClass]="{'precio': 'price1'}">{{item.precio}}</h4>
+        </div>
+      }
+    </div>
 </body>
 </html>
