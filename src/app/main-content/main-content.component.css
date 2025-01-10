@@ -2,12 +2,15 @@
     width: 50%;
     height: 5vh;
     margin: 5px;
-    background-color: #F7EDB8;
+    background-color: #fcbb5b;
     border-radius: 5px;
     border: 1px solid black;
     text-align: center;
     align-items: center;
     cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial';
+    font-weight: bold;
 }
 
 .menuImg{
@@ -18,10 +21,10 @@
 
 .categorias{
     display: flex;
-}
+  }
 
 .catBtn {
-    background-color: #F7EDB8;
+    background-color: #fcbb5b;
     text-align: center;
     display: flex; /* Usar flexbox para alinear elementos */
     align-items: center; /* Alinea la imagen y el texto verticalmente */
@@ -31,12 +34,15 @@
     border-radius: 5px;
     border: 1px solid black;
     cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial';
+    font-weight: bold;
 }
 
 .catImg {
     width: 33px; /* Ajusta el tamaño de la imagen */
     height: auto; /* Mantén la proporción de la imagen */
-    margin-right: 25vh; /* Espacio entre la imagen y el texto */
+    margin-right: 15vh; /* Espacio entre la imagen y el texto */
     background-color: transparent;
     padding: 5px;
 }
@@ -46,7 +52,9 @@
 }
 
 .producto{
-    width: 150px;
+    width: 100px;
+    height: 100px;
+    margin: 5px;
 }
 
 .listaProd{
@@ -64,14 +72,41 @@
 }
 
 .prod{
-    margin: 35px;
+    margin: 20px;
     display:flow-root;
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 5px 5px 8px rgb(250, 227, 200);
-    width: 50vh;
+    box-shadow: 5px 5px 8px #fc825b;
+    width: 30vh;
+}
+
+.oferta{
+  color: red;
+  font-size: small;
+  display: flex;
+  margin: 0;
+  padding-top: 20px;
 }
 
 .precio{
-    vertical-align: baseline;
+  font-size: medium;
+  display: inline-flex;
+  margin: 0;
+  padding-top: 18px;
+}
+
+.precios{
+  display:inline-flex;
+  background-color: #fcbb5b;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  justify-content:center;
+  padding: 5px 0px 5px 0px;
+  vertical-align: middle;
+}
+
+.precios h3 {
+  margin: 0 10px; /* Ajusta el espacio entre los títulos si es necesario */
 }
