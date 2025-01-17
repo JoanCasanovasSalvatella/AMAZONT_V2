@@ -110,3 +110,14 @@
 .precios h3 {
   margin: 0 10px; /* Ajusta el espacio entre los títulos si es necesario */
 }
+
+@media (max-width: 400px) {
+  body{
+    width: 100%;
+    margin: 0;
+  }
+
+  .mainBtn{
+    width: 50%;
+  }
+}
