@@ -37,7 +37,7 @@
             <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
             <h3>{{item.nombre}}</h3>
             <h4>{{item.desc}}</h4><br>
-            <div [ngClass] = "{'precios' : 'precio1'}">
+            <div [ngClass] = "{'preciosOfer' : 'precio1'}">
               <h3 [ngClass]="{'oferta': 'price1'}">{{item.precioAnterior}}</h3>
               <h3 [ngClass]="{'precio': 'price1'}">{{item.precio}}</h3>
             </div>

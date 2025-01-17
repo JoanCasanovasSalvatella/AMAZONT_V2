@@ -107,17 +107,99 @@
   vertical-align: middle;
 }
 
+.preciosOfer{
+  display:inline-flex;
+  background-color: #fcbb5b;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  justify-content:center;
+  padding: 5px 0px 5px 0px;
+  vertical-align: middle;
+}
+
 .precios h3 {
   margin: 0 10px; /* Ajusta el espacio entre los títulos si es necesario */
 }
 
 @media (max-width: 400px) {
   body{
-    width: 100%;
+    width: 45%;
     margin: 0;
   }
 
   .mainBtn{
     width: 50%;
   }
+
+  .catBtn {
+    background-color: #fcbb5b;
+    text-align: center;
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    width: 31%;
+    height: 5vh;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Arial';
+    font-weight: bold;
+  }
+
+  .catImg {
+    width: 23px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-right: 2vh; /* Espacio entre la imagen y el texto */
+    background-color: transparent;
+    padding: 2px;
+  }
+
+  .prod{
+    margin-left: 3px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px #fc825b;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content:center;
+    height: 35vh;
+    margin-right: 3px;
+    display: block;
+  }
+
+  .precios{
+    width: 34.9vh;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 42px;
+    margin-left: -20px;
+    margin-right: -21px;
+  }
+
+  .precio{
+    text-align: center;
+    padding: 2px;
+  }
+
+  .preciosOfer{
+    width: 34.9vh;
+    background-color: #fcbb5b;
+  }
+
+  .listaProd, .listaProd2{
+    width: 98%;
+    margin-left: 3px;
+    display: grid;
+    justify-content: center;
+  }
+
+  .h4{
+    margin-bottom: 0px;
+  }
+
 }
