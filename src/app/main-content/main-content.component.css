@@ -21,7 +21,7 @@
 
 .categorias{
     display: flex;
-  }
+  } 
 
 .catBtn {
     background-color: #fcbb5b;
@@ -125,12 +125,15 @@
 
 @media (max-width: 400px) {
   body{
-    width: 45%;
+    width: 100%; 
     margin: 0;
+    text-align: center;
   }
 
-  .mainBtn{
-    width: 50%;
+  .menuImg{
+    width: 155vh;
+    height: 70vh;
+    margin: 2px;
   }
 
   .catBtn {
@@ -157,33 +160,23 @@
     padding: 2px;
   }
 
-  .prod{
-    margin-left: 3px;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 5px 5px 8px #fc825b;
-    padding-left: 20px;
-    padding-right: 20px;
-    justify-content:center;
-    height: 35vh;
-    margin-right: 3px;
-    display: block;
-  }
+  
 
   .precios{
-    width: 34.9vh;
-    height: 38px;
+    width: 77.4vh;
+    height: 52px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 42px;
-    margin-left: -20px;
+    margin-top: 27px;
+    margin-left: -150px;
     margin-right: -21px;
   }
 
   .precio{
     text-align: center;
     padding: 2px;
+    font-size: 38px;
   }
 
   .preciosOfer{
@@ -191,15 +184,40 @@
     background-color: #fcbb5b;
   }
 
-  .listaProd, .listaProd2{
-    width: 98%;
-    margin-left: 3px;
-    display: grid;
-    justify-content: center;
+  
+
+  h4{
+    margin-bottom: 3px;
+    font-size: 30px;
   }
 
-  .h4{
-    margin-bottom: 0px;
+  h3{
+    font-size: 35px;
   }
 
+  /*Contenedor de los botones superiores*/
+  .enlaces{
+    width: 131.5vh;
+    height: 10vh;
+    margin-bottom: 5px;
+  }
+
+  .mainBtn{
+    /*Dimensiones de los botones*/
+    width: 115vh;
+    height: 9vh;
+    gap: 8px;
+
+    /*Formato de texto*/
+    font-size: 25px;
+  }
+
+  /*Imagen que ocupa toda la longitud*/
+  .menuImg{
+    width: 130.5vh;
+    height: 70vh;
+    margin: 2px;
+  }
+
+  
 }
