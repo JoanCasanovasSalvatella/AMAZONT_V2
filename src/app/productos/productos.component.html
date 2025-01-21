@@ -1,0 +1,30 @@
+<!--Listado de productos destacados-->
+<h4 [ngClass]="{'titulo':'titulo1'}">Nuestros productos destacados</h4>
+<div [ngClass]="{'listaProd' : 'lista'}">
+@for (item of productos; track $index) {
+    <div class="prod">
+        <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
+        <h3>{{item.nombre}}</h3>
+        <h4>{{item.desc}}</h4>
+        <div [ngClass] = "{'precios' : 'precio1'}">
+          <h4 [ngClass]="{'precio': 'price1'}">{{item.precio}}</h4>
+        </div>
+    </div>  
+  }
+</div>
+
+<!--Listado de productos destacados-->
+<h4 [ngClass]="{'titulo':'titulo1'}">Ofertas y novedades</h4>
+<div [ngClass]="{'listaProd2' : 'lista'}">
+@for (item of novedades; track $index) {
+    <div class="prod2">
+        <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
+        <h3>{{item.nombre}}</h3>
+        <h4>{{item.desc}}</h4><br>
+        <div [ngClass] = "{'preciosOfer' : 'precio1'}">
+          <h4 [ngClass]="{'oferta' : 'precio1'}">{{item.precioAnterior}}</h4>
+          <h4 [ngClass]="{'precio2' : 'precio1'}">{{item.precio}}</h4>
+        </div> 
+    </div>
+  }
+</div>
