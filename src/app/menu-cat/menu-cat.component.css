@@ -1,0 +1,53 @@
+.categorias{
+    display: flex;
+    width: 100%;
+}
+
+.catBtn {
+    background-color: #fcbb5b;
+    text-align: center;
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Alinea la imagen y el texto verticalmente */
+    width: 67.2vh;
+    height: 5vh;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial';
+    font-weight: bold;
+}
+
+.producto{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+@media (max-width: 400px){
+
+    /*Botones de categorias*/
+    .catBtn {
+        background-color: #fcbb5b;
+        text-align: center;
+        display: flex; /* Usar flexbox para alinear elementos */
+        align-items: center; /* Alinea la imagen y el texto verticalmente */
+        width: 42.3vh;
+        height: 15vh;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid black;
+        cursor: pointer;
+        font-size: 20px; 
+        font-family: 'Arial';
+        font-weight: bold;
+      }
+      .producto {
+        width: 75px; /* Ajusta el tamaño de la imagen */
+        height: auto; /* Mantén la proporción de la imagen */
+        margin-right: 2vh; /* Espacio entre la imagen y el texto */
+        background-color: transparent;
+        padding: 2px;
+      }
+}
