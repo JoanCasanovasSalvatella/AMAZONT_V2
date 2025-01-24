@@ -1,0 +1,11 @@
+<div class="contenedor">
+    <!--Lista de categorias-->
+    @for (item of categorias; track $index) {
+        <div class="prod">
+            <div class="categoria">
+                <img src="{{item.imagen}}" alt="imagen del producto">
+                <h3>{{item.nombre}}</h3>
+            </div>
+        </div>  
+      }
+</div> 
