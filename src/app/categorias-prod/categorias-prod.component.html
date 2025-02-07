@@ -1,11 +1,15 @@
 <div class="contenedor">
-    <!--Lista de categorias-->
-    @for (item of categorias; track $index) {
-        <div class="prod">
-            <div class="categoria">
-                <img src="{{item.imagen}}" alt="imagen del producto">
-                <h3>{{item.nombre}}</h3>
-            </div>
-        </div>  
-      }
+    <table class="categorias">
+        <!--Lista de categorias-->
+        @for (item of categorias; track $index) {
+            <tr>
+                <td>
+                    <button><img src="{{item.imagen}}" alt="imagen del producto" class="img"><h3>{{item.nombre}}</h3></button>    
+                </td>
+            </tr>
+        }
+    </table>
 </div> 
+<div class="productos">
+    <app-prod-list></app-prod-list>
+</div>

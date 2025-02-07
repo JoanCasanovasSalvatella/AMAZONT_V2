@@ -1,20 +1,49 @@
-@media (max-width: 1280px){
-    img{
-        width: 120px;
-        height: 120px;
+    body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+    }
+    
+    .img{
+        max-width: 100%;
+        width: 40px;
+        height: 40px;
+        margin-left: 0px;
+        padding: 5px;
     }
 
-    .contenedor{
+    .nombre{
+        margin-left: 5px;
+    }
+
+    .prod{
+        text-align: center;
+    }
+
+    .categorias{
+        width: 75%;
+        gap: 10px;
         display: flex;
-        gap: 20px;
+        flex-wrap: wrap;
+        margin-left: 20%;
+        text-align: center;
     }
 
-    .prod, img{
+    tr{
+        display:flex;
+    }
+
+    td{
+        display:flex;
+    }
+
+    button{
+        width: 380px;
         display: flex;
+        background-color: #fcbb5b;
+        border-radius: 5px;
+        border-color: black;
+        margin-top: 10px;
     }
 
-    .categoria{
-        display: flexbox;
-    }
-
-}
+    
+    

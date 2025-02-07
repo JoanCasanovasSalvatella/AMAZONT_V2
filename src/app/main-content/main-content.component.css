@@ -123,11 +123,6 @@
   margin: 0 10px; /* Ajusta el espacio entre los títulos si es necesario */
 }
 
-a{
-  text-decoration: none;
-  color: black;
-}
-
 @media (max-width: 400px) {
   body{
     width: 100%; 

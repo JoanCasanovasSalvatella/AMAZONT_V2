@@ -22,7 +22,7 @@ export const routes: Routes = [
   },
   {
     path: 'categorias-prod',
-    title: 'Product Categories',
-    component: CategoriasProdComponent,
+    title: 'Pagina categorias',
+    component: CategoriasProdComponent
   }
 ];
