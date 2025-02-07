@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuCatComponent } from "../menu-cat/menu-cat.component";
 import { ProductosComponent } from '../productos/productos.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [CommonModule, MenuCatComponent, ProductosComponent],
+  imports: [CommonModule, MenuCatComponent, ProductosComponent, RouterOutlet, RouterLink],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.css'
 })
