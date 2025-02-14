@@ -1,15 +1,29 @@
 <span>REGISTRATE</span>
 
-<form>
-  <input type="text" placeholder="Nombre">
+<form [formGroup]="registro">
+  <input type="text" placeholder="Nombre" id="nombre" formControlName="nombre">
+  @if (nombre.hasError('required') && nombre.touched) {
+    <p>El NOMBRE es obligatorio</p>
+  }
   <br>
-  <input type="text" placeholder="Correo Eelectronico">
+  <input type="text" placeholder="Correo Electronico" id="correo" formControlName="correo">
+  @if (correo.hasError('required') && correo.touched) {
+    <p>El CORREO es obligatorio</p>
+  } @else if (correo.hasError('email')) {
+    <p>El CORREO no es valido</p>
+  }
   <br>
-  <input type="text" placeholder="Contraseña">
+  <input type="text" placeholder="Contraseña" id="contrasena" formControlName="contrasena">
+  @if (contrasena.hasError('required') && contrasena.touched) {
+    <p>La CONTRASEÑA es obligatorio</p>
+  }
   <br>
-  <input type="text" placeholder="Repetir Contraseña">
+  <input type="text" placeholder="Repetir Contraseña" id="repetirContrasena" formControlName="repetirContrasena">
+  @if (repetirContrasena.hasError('required') && repetirContrasena.touched) {
+    <p>La CONTRASEÑA es obligatorio</p>
+  }
   <br>
-  <button type="submit">Iniciar Sesion</button>
+  <button>Iniciar Sesion</button>
 </form>
 
 <a routerLink="/login">Ya Tengo Una Cuenta</a>

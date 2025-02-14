@@ -1,11 +1,4 @@
-
-
-.container{
-  margin-top: 100px;
-  margin-left: 550px;
-}
-
-.tittle{
-  display: block;
-  margin-bottom: 5000000px;
+p{
+  color: red;
+  font-size: 10px;
 }
