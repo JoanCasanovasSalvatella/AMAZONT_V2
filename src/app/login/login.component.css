@@ -1,4 +1,54 @@
+*{
+  font-family:Arial, Helvetica, sans-serif;
+}
+
 p{
   color: red;
-  font-size: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.container{
+  margin-top: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border: 1px solid;
+}
+
+h3{
+  text-align: center;
+}
+
+input{
+  border-radius: 5px;
+  padding-left: 10px;
+  margin-left: 250px;
+  background-color: #F7EDB8;
+  width: 500px;
+  height:30px;
+}
+
+button{
+  border-radius: 10px;
+  text-align: center;
+  background-color: #F7EDB8;
+  width: 300px;
+  height: 40px;
+  margin-left: 360px;
+  margin-bottom: 40px;
+}
+
+h5{
+  margin-top: 50px;
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+.linea{
+  margin-left: 160px;
+  flex-grow: 1;
+  height: 2px;
+  background-color: black;
+  max-width: 700px;
+  margin-top: 15px;
 }
