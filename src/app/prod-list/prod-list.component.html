@@ -3,13 +3,13 @@
     <input type="text" placeholder="Buscar por categoría" [(ngModel)]="filtroCategoria">
     <input type="number" placeholder="Precio mínimo" [(ngModel)]="filtroPrecioMin">
     <input type="number" placeholder="Precio máximo" [(ngModel)]="filtroPrecioMax">
-    <button (click)="limpiarFiltros()">Limpiar filtros</button>
+    <button (click)="limpiarFiltros()" class="clear">Limpiar filtros</button>
 </div>
 <div class="listaProductos">
     <div *ngFor="let item of productosFiltrados; let i = index" class="card">
         <img [src]="item.imagen" alt="Imagen del producto">
         <div class="container">
-          <h3><b>{{item.nombre}}</b></h3>
+            <h3><a [routerLink]="['/product-details']"><b>{{item.nombre}}</b></a></h3>
           <div class="lowContnt">
             <div class="desc">
               <p>{{item.desc}}</p>
