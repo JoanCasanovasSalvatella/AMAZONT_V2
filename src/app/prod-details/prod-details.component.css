@@ -1,0 +1,30 @@
+.producto{
+  display: flex;
+}
+
+.moreImg{
+  display: grid;
+  gap: 15px;
+}
+
+.low{
+  display: flex;
+  gap: 20px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.entrega, .valoracion{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 50%;
+}
+
+.promedio{
+  margin: 5px;
+}
+
+.envio{
+  display: flex;
+  gap: 15px;
+}
