@@ -9,7 +9,7 @@
   <div *ngFor="let item of productosFiltrados; let i = index" class="card">
       <img [src]="item.imagen" alt="Imagen del producto">
       <div class="container">
-          <h3 routerLink="/product-details">{{item.nombre}}</h3>
+          <h3 [routerLink]="item.nombre">{{item.nombre}}</h3>
         <div class="lowContnt">
           <div class="desc">
             <p>{{item.desc}}</p>

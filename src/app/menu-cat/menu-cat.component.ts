@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { categoria } from '../interface/categorias.interface';
+import { Component, OnInit } from '@angular/core';
+import { AmazontService } from '../services/amazont.service';
+import { Categoria } from '../interface/categorias.interface';
 
 @Component({
   selector: 'app-menu-cat',
@@ -9,10 +10,12 @@ import { categoria } from '../interface/categorias.interface';
   templateUrl: './menu-cat.component.html',
   styleUrl: './menu-cat.component.css'
 })
-export class MenuCatComponent {
-  categorias = [
-    {id:1, nombre: 'Informatica', imagen: 'assets/pcIcon'},
-    {id:2, nombre: 'Hogar', imagen: 'assets/hogarIcon.jpg'},
-    {id:3, nombre: 'Fitness', imagen: 'assets/fitnessIcon.png'},
-  ]
+export class MenuCatComponent implements OnInit {
+  categorias: Categoria[] = [];
+
+  constructor(private amazontService: AmazontService) {}
+
+  ngOnInit(): void {
+    this.categorias = this.amazontService.categorias;
+  }
 }

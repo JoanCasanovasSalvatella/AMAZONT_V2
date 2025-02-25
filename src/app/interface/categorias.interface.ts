@@ -1,5 +1,5 @@
-export interface categoria{
-    id : number;
-    nombre : string;
-    imagen: string;
-  }
+export interface Categoria {
+  id: number;
+  nombre: string;
+  imagen: string;
+}

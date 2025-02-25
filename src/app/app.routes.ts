@@ -39,7 +39,7 @@ export const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'product-details',
+    path: 'categorias-prod/:prodId',
     title: 'Product Details Page',
     component: ProdDetailsComponent
   }

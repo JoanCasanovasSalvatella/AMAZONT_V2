@@ -1,8 +1,9 @@
-export interface productos{
-  id : number;
-  nombre : string;
+export interface Producto {
+  id: number;
+  nombre: string;
+  categoriaId: number;  // Ahora referenciamos el ID de la categoría
   imagen: string;
   desc: string;
-  precio: string;
-  precioAnterior: string;
+  precio: number;
+  precioAnterior: number;
 }
