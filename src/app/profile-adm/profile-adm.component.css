@@ -1,0 +1,352 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Propiedades de la seccion de perfil*/
+.perfil{
+  display: flex;
+  gap: 3vw;
+}
+
+/*propiedades de la imagen perfil*/
+.pfp{
+  max-width: 10vw;
+  border-radius: 100%;
+  margin-left: 1vw;
+  margin-top: 2vh;
+}
+
+.botones{
+  display: grid;
+  gap: 3vh;
+  margin-top: 2vh;
+
+}
+
+button{
+  width: 20vw;
+  margin-left: 47vw;
+  background-color: #15CCCC;
+  border: none;
+  border-radius: 15px;
+  height: 6vh;
+  color: black;
+  border: none;
+  border-radius: 2vh;
+  font-size: 18px;
+  min-width: 10vw;
+  min-height: 6.5vh;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #15CCCC, #13B3B3, #129A9A, #139696, #1d9d9d, #15CCCC);
+  background-size: 300% 300%;
+  animation: gradienteAnimado 3s infinite alternate;
+  color: white;
+}
+
+@keyframes gradienteAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.name{
+  display: flex;
+  gap: 1vw;
+  text-align: center;
+}
+
+h3{
+  width: 80px;
+  white-space: nowrap;
+  font-size: large;
+}
+
+h4{
+  margin-left: 100%;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.encabezado2{
+  margin-top: 5vh;
+  margin-bottom: 0vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 7vh;
+}
+
+.linea {
+  flex-grow: 1;
+  height: 10px;
+  background-color: #00c6c6;
+  max-width: 500px;
+  margin-top: 15px;
+}
+
+.seccion {
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  padding-top: 15px;
+}
+
+.addPlan{
+  margin-left: -7vw;
+}
+
+.plan{
+  display: flex;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.card{
+  background-color: #474747;
+  height: 66vh;
+  margin: 2vw;
+  width: 50%;
+  text-align: center;
+  box-shadow: rgb(117, 117, 117) 13px 13px 7px 0px;
+}
+
+.titulo{
+  background-color: #00c6c6;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  text-align: center;
+  padding-left: 6vw;
+}
+
+.imgPlan{
+  width: 100%;
+}
+
+.pie{
+  background-color: #474747;
+  height: 8vh;
+  text-align: center;
+  color: white;
+  font-size: medium;
+}
+
+img{
+  width: 100%;
+}
+
+.img2{
+  height: 75.5%;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.opciones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 10vh; /* Ensure it takes the full height of the viewport */
+}
+
+.gestiones{
+  margin-left: 3vw;
+  margin-right: 1vw;
+  margin-top: 0vh;
+  text-align: center;
+}
+
+/*Version de mobil*/
+@media (max-width: 320px){
+  *{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /*Propiedades de la seccion de perfil*/
+  .perfil{
+    display: flex;
+    gap: 3vw;
+    width: 100%;
+    min-width: 100%;
+  }
+
+  /*propiedades de la imagen perfil*/
+  .pfp{
+    max-width: 25vw;
+    width: 25vw;
+    border-radius: 100%;
+    margin-left: 1vw;
+    margin-top: 2vh;
+  }
+
+  .botones{
+    display: grid;
+    gap: 3vh;
+    margin-top: 2vh;
+  }
+
+  button{
+    width: 40vw;
+    margin-left: 47vw;
+    background-color: #15CCCC;
+    border: none;
+    border-radius: 15px;
+    height: 6vh;
+    color: black;
+    border: none;
+    border-radius: 2vh;
+    font-size: 21px;
+    min-width: 7vw;
+    min-height: 6.5vh;
+  }
+
+  button:hover {
+    background: linear-gradient(45deg, #15CCCC, #13B3B3, #129A9A, #139696, #1d9d9d, #15CCCC);
+    background-size: 300% 300%;
+    animation: gradienteAnimado 3s infinite alternate;
+    color: white;
+  }
+
+  @keyframes gradienteAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .name{
+    display: flex;
+    gap: 1vw;
+    text-align: center;
+  }
+
+  h3{
+    width: 50px;
+    white-space: nowrap;
+    font-size: large;
+  }
+
+  h4{
+    margin-left: 100%;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .encabezado2{
+    margin-top: 5vh;
+    margin-bottom: 0vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 7vh;
+  }
+
+  .linea {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #00c6c6;
+    max-width: 500px;
+    margin-top: 15px;
+  }
+
+  .seccion {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    padding-top: 15px;
+  }
+
+  .addPlan{
+    margin-left: -7vw;
+  }
+
+  .plan{
+    display: flex;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .card{
+    background-color: #474747;
+    height: 66vh;
+    margin: 2vw;
+    width: 50%;
+    text-align: center;
+    box-shadow: rgb(117, 117, 117) 13px 13px 7px 0px;
+  }
+
+  .titulo{
+    background-color: #00c6c6;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    padding-left: 6vw;
+  }
+
+  .imgPlan{
+    width: 100%;
+  }
+
+  .pie{
+    background-color: #474747;
+    height: 8vh;
+    text-align: center;
+    color: white;
+    font-size: medium;
+  }
+
+  img{
+    width: 100%;
+  }
+
+  .img2{
+    height: 75.5%;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .opciones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10vh; /* Ensure it takes the full height of the viewport */
+    width: 100%;
+    padding-left: 32vw;
+    gap: 3vw;
+  }
+
+  button.gestiones{
+    margin-top: 0vh;
+    text-align: center;
+    min-width: 76%;
+  }
+
+  .opciones button{
+    width: 50vw;
+  }
+
+  hr{
+    min-width: 100%;
+    width: 527px;
+    background-color: black;
+    height: 1px;
+  }
+}
