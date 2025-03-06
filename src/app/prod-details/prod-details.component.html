@@ -3,41 +3,75 @@
 <div class="producto">
   <!-- Columna de la imagen principal del producto -->
   <div class="mainImg">
-    <img [src]="selectProd.imagen" alt="imagen principal del producto">
+    <img [src]="selectProd.imagen" alt="imagen principal del producto" class="imgP">
   </div>
   <!-- Columna de las imágenes secundarias -->
   <div class="moreImg">
-    <img [src]="selectProd.imagen" alt="imagen secundaria del producto">
-    <img [src]="selectProd.imagen" alt="imagen secundaria del producto">
-    <img [src]="selectProd.imagen" alt="imagen secundaria del producto">
+    <img [src]="selectProd.imagen" alt="imagen secundaria del producto" class="second">
+    <img [src]="selectProd.imagen" alt="imagen secundaria del producto" class="second">
+    <img [src]="selectProd.imagen" alt="imagen secundaria del producto" class="second">
   </div>
 </div>
 
 <!-- Contenedor de la información del producto -->
 <div class="propiedades">
   <div class="precio">
-    <p>{{selectProd.precio}}€</p>
+    <h3>{{selectProd.precio}}€</h3>
+    <h3>{{selectProd.nombre}}</h3>
   </div>
-  <div class="nombre">
-    <h2>{{selectProd.nombre}}</h2>
-  </div>
+
   <div class="descripcion">
     <p>{{selectProd.desc}}</p>
+  </div>
+  <div class="disponible">
+    <p>Disponible</p>
   </div>
 </div>
 
 <div class="low">
   <div class="entrega">
     <div class="envio">
-      <p class="data">Gastos de envío:</p>
-      <p class="data">Devolución: </p>
+      <p class="data"><b>Envio:</b> Gratis</p>
+      <p class="data"><b>Devolución:</b> Gratis</p>
     </div>
-    <button>Añadir al carrito</button>
+
+      <img [src]="selectProd.imagen" alt="imagen secundaria del producto" class="delivery">
+
+      <button>Añadir al carrito</button>
   </div>
   <div class="valoracion">
-    <div class="promedio">
-      <h3 class="total">4.6</h3>
-      &#9733; &#9733; &#9733; &#9733;
+    <h3>Opiniones</h3><br>
+    <div class="content">
+      <div class="promedio">
+        <h3 class="total">4.6</h3>
+        &#9733; &#9733; &#9733; &#9733; <!--Iconos de estrellas-->
+        <p>100 opiniones</p>
+      </div>
+      <div class="stars">
+        <div class="estrella">
+          <h4 class="review">5&#9733;</h4>
+          <progress max="100" value="80"></progress>
+        </div>
+        <div class="estrella">
+          <h4 class="review">4&#9733;</h4>
+          <progress max="100" value="65"></progress>
+        </div>
+        <div class="estrella">
+          <h4 class="review">3&#9733;</h4>
+          <progress max="100" value="30"></progress>
+        </div>
+        <div class="estrella">
+          <h4 class="review">2&#9733;</h4>
+          <progress max="100" value="10"></progress>
+        </div>
+        <div class="estrella">
+          <h4 class="review">1&#9733;</h4>
+          <progress max="100" value="2"></progress>
+        </div>
+      </div>
+    </div>
+    <div class="addReview">
+      <button>Agregar opinión</button>
     </div>
   </div>
 </div>
