@@ -28,7 +28,18 @@
     }
     <br>
     <br>
-    <button>Iniciar Sesion</button>
+    <select id="roles" formControlName="rol">
+      <option value="--Elije un rol--"></option>
+      <option value="Cliente">Cliente</option>
+      <option value="Administrador">Administrador</option>
+    </select>
+
+    @if (rol.hasError('required') && rol.touched) {
+      <p>Porfavor, elija un rol</p>
+    }
+
+    <br><br>
+    <button>Registrarme</button>
   </form>
 
   <a routerLink="/login">Ya Tengo Una Cuenta</a>

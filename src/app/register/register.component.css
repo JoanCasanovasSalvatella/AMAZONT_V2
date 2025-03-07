@@ -13,6 +13,8 @@ p{
   margin-left: 200px;
   margin-right: 200px;
   border: 1px solid;
+  justify-content: center;
+  text-align: center;
 }
 
 h3{
@@ -22,7 +24,7 @@ h3{
 input{
   border-radius: 5px;
   padding-left: 10px;
-  margin-left: 250px;
+  /*margin-left: 250px;*/
   background-color: #F7EDB8;
   width: 500px;
   height:30px;
@@ -32,9 +34,9 @@ button{
   border-radius: 10px;
   text-align: center;
   background-color: #F7EDB8;
+  font-size: 15px;
   width: 300px;
   height: 40px;
-  margin-left: 360px;
 }
 
 h5{
@@ -49,5 +51,18 @@ a{
   text-align: center;
   text-decoration: none;
   color: black;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+a:hover{
+  color: #B8860B;
+}
+
+select{
+  text-align: center;
+  justify-items: center;
+  width: 300px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #F7EDB8;
 }
