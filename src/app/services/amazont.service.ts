@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Categoria } from '../interface/categorias.interface';
 import { Producto } from '../interface/productos.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,10 @@ export class AmazontService {
       { id: 7, nombre: 'Sofá de 4 plazas familiar', categoriaId: 2, imagen: 'assets/prod3.png', desc: 'Sofá cómodo y espacioso.', precio: 799.89, precioAnterior: 719.79 },
       { id: 8, nombre: 'Lavadora inteligente Bosch', categoriaId: 2, imagen: 'assets/prod4.png', desc: 'Lavadora eficiente y de última tecnología.', precio: 899.79, precioAnterior: 820.49 }
     ];
+  }
+
+  loginUser( email: string, password: string ): Observable<any>{
+    return this.http.post<any>(`$(this.apiUrl)/user/Login`, { email: email, password: password });
   }
 
   // Método para obtener el nombre de la categoría de un producto
