@@ -1,27 +1,36 @@
-<div class="container">
-  <h3 class="tittle">INCIO DE SESION</h3>
+<div class="cuerpo">
+  <div class="logo">
+      <img src="assets/icon.png" alt="logo" class="icon"><!--Logotipo de la empresa-->
+      <h2>Bienvenido de vuelta</h2>
+  </div>
 
-  <form [formGroup]="login">
-    <input type="text" placeholder="Correo Electronico" id="correo" formControlName="correo">
-    @if (correo.hasError('required') && correo.touched) {
-      <p>El CORREO es obligatorio</p>
-    } @else if (correo.hasError('email')) {
-      <p>El CORREO no es valido</p>
-    }
-    <br>
-    <br>
-    <input type="password" placeholder="Contraseña" id="contrasena" formControlName="contrasena">
-    @if (contrasena.hasError('required') && contrasena.touched) {
-      <p>La CONTRASEÑA es obligatorio</p>
-    }
-    <br>
-    <br>
-    <button class="login">Iniciar Sesion</button>
-  </form>
+    <div class="container">
+      <h3 class="tittle">INICIO DE SESIÓN</h3>
 
-  <div class="linea"></div>
+      <form [formGroup]="login">
+        <input type="text" placeholder="Correo Electronico" id="correo" formControlName="correo">
+        @if (correo.hasError('required') && correo.touched) {
+          <p>El CORREO es obligatorio</p>
+        } @else if (correo.hasError('email')) {
+          <p>El CORREO no es valido</p>
+        }
+        <br>
+        <br>
+        <input type="password" placeholder="Contraseña" id="contrasena" formControlName="contrasena">
+        @if (contrasena.hasError('required') && contrasena.touched) {
+          <p>La CONTRASEÑA es obligatorio</p>
+        }
+        <br><br>
+        <a routerLink="" class="recover">He olvidado mi contraseña</a>
+        <br>
+        <br>
+        <button class="login">Iniciar Sesion</button>
+      </form>
 
-  <h5>¿ERES NUEVO?</h5>
-  <br>
-  <button class="register" routerLink="/register">Crea Una Cuenta</button>
+      <div class="linea"></div>
+
+      <h5>¿ERES NUEVO?</h5>
+      <br>
+      <button class="register" routerLink="/register">Crea Una Cuenta</button>
+    </div>
 </div>
