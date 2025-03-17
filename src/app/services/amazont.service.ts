@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AmazontService {
-  private apiUrl = 'http://127.0.0.1:8000';
+  private apiUrl = 'http://127.0.0.1:8000/api';
   categorias: Categoria[] = [];
   productos: Producto[]= [];
 
@@ -34,24 +34,52 @@ export class AmazontService {
     ];
   }
 
-  loginUser( email: string, password: string ): Observable<any>{
-    return this.http.post<any>(`$(this.apiUrl)/user/Login`, { email: email, password: password });
+  //===================================================================================================
+  //USER
+  //===================================================================================================
+
+  //LOGIN, REGISTRO, RECUPERAR CONTRASEÑA
+  verificarCorreo(email: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/VerifyEmail`, email);
   }
 
-  // Método para obtener el nombre de la categoría de un producto
+  //LOGIN
+  loginUser(email: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/Login`, { email, password });
+  }
+
+  //REGISTER
+  registerUser(name: string, email: string, password: string, rol: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/Create`, { name, email, password, rol });
+  }
+
+  //RECUPERAR CONTRASEÑA
+  enviarCodigo(email: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/SendCode`, email);
+  }
+  verificarCodigo(code: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/VerifyCode`, code);
+  }
+  verificarContrasena(password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/VerifyPassword`, password);
+  }
+  cambiarContrasena(email: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/ChangePassword`, { email, password });
+  }
+
+  //CATEGORIA
   obtenerNombreCategoria(categoriaId: number): string {
     const categoria = this.categorias.find(c => c.id === categoriaId);
     return categoria ? categoria.nombre : 'Desconocida';
   }
 
+  //PRODUCTOS
   obtenerProductosDestacados(): Producto[] {
     return this.productos.slice(0, this.productos.length / 2); // Primera mitad
   }
-
   obtenerNovedades(): Producto[] {
     return this.productos.slice(this.productos.length / 2); // Segunda mitad
   }
-
   getProducto(name: string): Producto | undefined {
     return this.productos.find((producto) => producto.nombre === name);
   }
