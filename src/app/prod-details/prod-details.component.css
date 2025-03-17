@@ -1,3 +1,11 @@
+/*Imports de fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+/**/
+*{
+  font-family:'Rubik';
+}
+
 .producto{
   display: flex;
 }
@@ -51,8 +59,8 @@
 }
 
 .imgP{
-  width: 50vw;
-  height: 50vh;
+  width: 40vw;
+  height: 40vh;
 }
 
 .second{
@@ -60,12 +68,26 @@
 }
 
 .precio{
-  display: flex;
+  display: grid;
   text-align: center;
-  gap: 25px;
-  padding-left: 15vw;
-  margin-left: 1vw;
+  gap: 2px;
+  margin-left: 5vw;
   width: 35vw;
+  height: 50vh;
+  border-left: 1px solid lightgray;
+}
+
+.info{
+  margin-top: -70px;
+  margin-bottom: 0vh;
+}
+
+span{
+  font-weight: bold;
+}
+
+.price{
+  color:#fcbb5b;
 }
 
 .delivery{
@@ -92,6 +114,7 @@ p{
 .data{
   margin-left: 10vw;
 }
+
 
 .descripcion, .disponible{
   padding-left: 15vw;
