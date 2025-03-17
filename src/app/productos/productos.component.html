@@ -1,30 +1,32 @@
 <!--Listado de productos destacados-->
-<h4 [ngClass]="{'titulo':'titulo1'}">Nuestros productos destacados</h4>
-<div [ngClass]="{'listaProd' : 'lista'}">
+<h4 [ngClass]="{'titulo':'titulo1'}" aria-label="best_sealed_products">Nuestros productos destacados</h4>
+<div [ngClass]="{'listaProd' : 'lista'}" role="list">
 @for (item of productos; track $index) {
-    <div class="prod">
-        <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
-        <h3>{{item.nombre}}</h3>
-        <h4>{{item.desc}}</h4>
-        <div [ngClass] = "{'precios' : 'precio1'}">
-          <h4 [ngClass]="{'precio': 'price1'}">{{item.precio}}</h4>
-        </div>
-    </div>  
+  <div class="prod" role="listitem">
+    <img src="{{item.imagen}}" alt="imagen del producto {{item.nombre}}" [ngClass]="{'producto' : 'producto1'}" aria-label="product_image">
+    <h3 aria-label="product_name">{{item.nombre}}</h3>
+    <p aria-label="product_description">{{item.desc}}</p>
+    <div [ngClass] = "{'precios' : 'precio1'}">
+      <p [ngClass]="{'precio': 'price1'}" aria-label="product_price">{{item.precio}}</p>
+    </div>
+  </div>
   }
 </div>
 
 <!--Listado de productos destacados-->
-<h4 [ngClass]="{'titulo':'titulo1'}">Ofertas y novedades</h4>
-<div [ngClass]="{'listaProd2' : 'lista'}">
+<h4 [ngClass]="{'titulo':'titulo1'}" aria-label="offer_and_news">Ofertas y novedades</h4>
+<div [ngClass]="{'listaProd2' : 'lista'}" role="list">
 @for (item of novedades; track $index) {
-    <div class="prod2">
-        <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
-        <h3>{{item.nombre}}</h3>
-        <h4>{{item.desc}}</h4><br>
+    <div class="prod2" role="listitem">
+        <img src="{{item.imagen}}" alt="imagen del producto {{item.nombre}}" [ngClass]="{'producto' : 'producto1'}" aria-label="product_image">
+        <h3 aria-label="product_name">{{item.nombre}}</h3>
+        <p aria-label="product_description">{{item.desc}}</p><br>
         <div [ngClass] = "{'preciosOfer' : 'precio1'}">
-          <h4 [ngClass]="{'oferta' : 'precio1'}">{{item.precioAnterior}}</h4>
-          <h4 [ngClass]="{'precio2' : 'precio1'}">{{item.precio}}</h4>
-        </div> 
+          <p [ngClass]="{'oferta' : 'precio1'}" aria-label="offer">{{item.precioAnterior}}</p>
+          <p [ngClass]="{'precio2' : 'precio1'}" aria-label="offer_price">{{item.precio}}</p>
+        </div>
     </div>
   }
 </div>
+
+<br><br><br>
