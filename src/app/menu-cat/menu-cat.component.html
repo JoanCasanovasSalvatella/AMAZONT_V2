@@ -1,11 +1,11 @@
 <div [ngClass]="{'categorias' : 'categoria'}">
-    <!--Botones que enlazan con cada categoria-->
-    @for (item of categorias; track $index) {
-        <div class="prod">
-            <button [ngClass]="{'catBtn' : 'catBtn1'}">
-                <img src="{{item.imagen}}" alt="imagen del producto" [ngClass]="{'producto' : 'producto1'}">
-                <h3>{{item.nombre}}</h3>
-            </button>
-        </div>  
-      }
+  <!--Botones que enlazan con cada categoria-->
+  @for (item of categorias; track $index) {
+    <div class="prod">
+      <button [ngClass]="{'catBtn' : 'catBtn1'}" aria-label="boton de categorias">
+        <img src="{{item.imagen}}" alt="imagen del producto {{item.nombre}}" [ngClass]="{'producto' : 'producto1'}" aria-label="imagen de la categoria">
+        <h3 aria-label="nombre categoria">{{item.nombre}}</h3>
+      </button>
+    </div>
+    }
 </div>
