@@ -1,23 +1,26 @@
 <h2>Productos</h2>
 <div class="filtros">
-    <input type="text" placeholder="Buscar por categoría" [(ngModel)]="filtroCategoria">
-    <input type="number" placeholder="Precio mínimo" [(ngModel)]="filtroPrecioMin">
-    <input type="number" placeholder="Precio máximo" [(ngModel)]="filtroPrecioMax">
-    <button (click)="limpiarFiltros()" class="clear">Limpiar filtros</button>
+  <label for="categoria">Buscar por categoría:</label>
+  <input type="text" id="categoria" placeholder="Buscar por categoría" [(ngModel)]="filtroCategoria" aria-label="search_category">
+  <label for="precioMin">Precio mínimo:</label>
+  <input type="number" id="precioMin" placeholder="Precio mínimo" [(ngModel)]="filtroPrecioMin" aria-label="search_min_price">
+  <label for="precioMax">Precio máximo:</label>
+  <input type="number" id="precioMax" placeholder="Precio máximo" [(ngModel)]="filtroPrecioMax" aria-label="search_max_price">
+  <button (click)="limpiarFiltros()" class="clear" aria-label="clear_filter_button">Limpiar filtros</button>
 </div>
-<div class="listaProductos">
-  <div *ngFor="let item of productosFiltrados; let i = index" class="card">
-      <img [src]="item.imagen" alt="Imagen del producto">
-      <div class="container">
-          <h3 [routerLink]="item.nombre">{{item.nombre}}</h3>
-        <div class="lowContnt">
-          <div class="desc">
-            <p>{{item.desc}}</p>
-          </div>
-          <div class="precio">
-            <p class="price"><b>{{item.precio}}€</b></p>
-          </div>
-        </div>
+<div class="listaProductos" role="list">
+  <div *ngFor="let item of productosFiltrados; let i = index" class="card" role="listitem">
+    <img [src]="item.imagen" alt="{{item.nombre}}" >
+    <div class="container">
+      <h3 [routerLink]="item.nombre" tabindex="0" aria-label="product_name">{{item.nombre}}</h3>
+    <div class="lowContnt">
+      <div class="desc">
+      <p aria-label="product_description">{{item.desc}}</p>
+      </div>
+      <div class="precio">
+      <p class="price" aria-label="product_price"><b>{{item.precio}}€</b></p>
       </div>
     </div>
+    </div>
+  </div>
 </div>
