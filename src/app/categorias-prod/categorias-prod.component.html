@@ -1,15 +1,22 @@
-<div class="contenedor">
-    <table class="categorias">
-        <!--Lista de categorias-->
-        @for (item of categorias; track $index) {
-            <tr>
-                <td>
-                    <button><img src="{{item.imagen}}" alt="imagen del producto" class="img"><h3>{{item.nombre}}</h3></button>    
-                </td>
-            </tr>
-        }
-    </table>
-</div> 
-<div class="productos">
+<div class="categoryPage" id="body">
+  <div class="menu" id="principal">
+    <div class="iconMenu">
+      <button class="menu-btn" (click)="openMenu($event)" id="btn_open" aria-label="Ver categorias">Ver categorias</button>
+    </div>
+    <div class="menuSide" id="side_menu">
+      <nav>
+        <ul class="namePage">
+          @for (item of categorias; track $index) {
+            <li class="elemento">
+              <img src="assets/tag-3.svg" alt="icono de categorias" class="icono">
+              <h3>{{item.nombre}}</h3>
+            </li>
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="productos">
     <app-prod-list></app-prod-list>
+  </div>
 </div>
