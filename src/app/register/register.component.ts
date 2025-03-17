@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AmazontService } from '../services/amazont.service';
+import { contrasenaFuerte } from '../validators/contrasena-validator';
+import { correoExisteValidator } from '../validators/verificarCorreo-validator';
 
 @Component({
   selector: 'app-register',
@@ -17,11 +20,15 @@ export class RegisterComponent {
   repetirContrasena: FormControl;
   rol: FormControl;
 
-  constructor() {
-    this.nombre = new FormControl('', [Validators.required]);
-    this.correo = new FormControl('', [Validators.required, Validators.email]);
-    this.contrasena = new FormControl('', [Validators.required]);
-    this.repetirContrasena = new FormControl('', [Validators.required]);
+  mensajeEstado: string = '';
+
+  coincidenContrasenas: boolean = false;
+
+  constructor(private amazontService: AmazontService, private router: Router) {
+    this.nombre = new FormControl('', [Validators.required, Validators.maxLength(100)]);
+    this.correo = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100)], [correoExisteValidator(this.amazontService)]);
+    this.contrasena = new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(8), contrasenaFuerte()]);
+    this.repetirContrasena = new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(8), contrasenaFuerte()]);
     this.rol = new FormControl('', [Validators.required])
 
     this.registro = new FormGroup({
@@ -30,6 +37,27 @@ export class RegisterComponent {
       contrasena: this.contrasena,
       repetirContrasena: this.repetirContrasena,
       rol: this.rol
+    });
+  }
+
+  coincideContrasena() {
+    if (this.registro.value.contrasena === this.registro.value.contrasena) {
+      this.coincidenContrasenas = true;
+    } else {
+      this.coincidenContrasenas = false;
+    }
+  }
+
+  registerUser() {
+    this.amazontService.registerUser(this.registro.value.nombre, this.registro.value.correo, this.registro.value.contrasena, this.registro.value.rol).subscribe({
+      next: (data) => {
+        console.log(data);
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        console.error('Error al registrar', err);
+        this.mensajeEstado = 'Error al registrar';
+      }
     });
   }
 }
