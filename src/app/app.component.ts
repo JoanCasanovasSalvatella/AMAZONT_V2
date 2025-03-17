@@ -23,11 +23,11 @@ export class AppComponent {
          if (title) {
             body.style.backgroundColor = "#FFFFFF";
             body.style.color = "#080808";
-            title.style.color = "#080808"; // Change title color in light mode
+            title.style.color = "#FFFFFF"; // Change title color in light mode
           }
 
           if (div) {
-            div.style.backgroundColor = "#FFFFFF"; // Cambia el fondo del div en el modo claro
+            div.style.backgroundColor = "#232f3e"; // Cambia el fondo del div en el modo claro
           }
       }
 
