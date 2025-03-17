@@ -1,11 +1,11 @@
     <div [ngClass]="{'enlaces' : 'enlace'}">
-        <!--Botones de enlace a las ventanas Categoria y Ventas-->
-        <button [ngClass]="{'mainBtn' : 'mainBtn1'}" routerLink="/categorias-prod">Categorias</button>
-        <button [ngClass]="{'mainBtn' : 'mainBtn1'}">Ventas</button>
+      <!--Botones de enlace a las ventanas Categoria y Ventas-->
+      <button [ngClass]="{'mainBtn' : 'mainBtn1'}" routerLink="/categorias-prod" aria-label="Ir a la sección de categorías">Categorias</button>
+      <button [ngClass]="{'mainBtn' : 'mainBtn1'}" aria-label="Ir a la sección de ventas">Ventas</button>
     </div>
 
     <!--Imagen que rellena toda la longitud de la pagina-->
-    <img src="assets/menuImg" alt="" [ngClass]="{'menuImg' : 'imagen1'}">
+    <img src="assets/menuImg" alt="Imagen principal del menú" [ngClass]="{'menuImg' : 'imagen1'}" aria-label="Imagen principal">
 
     <app-menu-cat></app-menu-cat>
 
