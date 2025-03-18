@@ -6,6 +6,7 @@ import { CategoriasProdComponent } from './categorias-prod/categorias-prod.compo
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProdDetailsComponent } from './prod-details/prod-details.component';
+import { RecoverPwdComponent } from './recover-pwd/recover-pwd.component';
 
 export const routes: Routes = [
   {
@@ -42,5 +43,10 @@ export const routes: Routes = [
     path: 'categorias-prod/:prodId',
     title: 'Product Details Page',
     component: ProdDetailsComponent
+  },
+  {
+    path: 'recoverPassword',
+    title: 'Recover Password',
+    component: RecoverPwdComponent
   }
 ];
