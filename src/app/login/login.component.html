@@ -1,18 +1,16 @@
 <div class="cuerpo">
   <div class="logo">
       <img src="assets/icon.png" alt="logo" class="icon"><!--Logotipo de la empresa-->
-      <h2>Bienvenido de vuelta</h2>
+      <h2 aria-label="welcome back">Bienvenido de vuelta</h2>
   </div>
 
     <div class="container">
-      <h3 class="tittle">INICIO DE SESIÓN</h3>
+      <h3 class="tittle" aria-label="login">INICIO DE SESIÓN</h3>
 
-      <form [formGroup]="login">
+      <form [formGroup]="login" aria-label="login form">
         <input type="text" placeholder="Correo Electronico" id="correo" formControlName="correo">
         @if (correo.hasError('required') && correo.touched) {
           <p>El CORREO es obligatorio</p>
-        } @else if (correo.hasError('correoNoExiste') && correo.touched) {
-          <p>El CORREO no esta registrado</p>
         } @else if (correo.hasError('email')) {
           <p>El CORREO no es valido</p>
         }
@@ -23,10 +21,10 @@
           <p>La CONTRASEÑA es obligatorio</p>
         }
         <br><br>
-        <a routerLink="" class="recover">He olvidado mi contraseña</a>
+        <a routerLink="" class="recover" aria-label="forgoten password link">He olvidado mi contraseña</a>
         <br>
         <br>
-        <button class="login" (click)="loginUser()">Iniciar Sesion</button>
+        <button [disabled]="login.invalid" class="login" (click)="loginUser()" aria-label="login button">Iniciar Sesion</button>
       </form>
       <br>
       @if (mensajeEstado) {
@@ -34,8 +32,8 @@
       }
       <br>
       <div class="linea"></div>
-      <h5>¿ERES NUEVO?</h5>
+      <h5 aria-label="new here?">¿ERES NUEVO?</h5>
       <br>
-      <button class="register" routerLink="/register">Crea Una Cuenta</button>
+      <button class="register" routerLink="/register" aria-label="create account">Crea Una Cuenta</button>
     </div>
 </div>
