@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { AmazontService } from '../services/amazont.service';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { contrasenaFuerte } from '../validators/contrasena-validator';
-import { correoExisteValidator } from '../validators/verificarCorreo-validator';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
+import { correoNoExisteValidator } from '../validators/validarCorreo-validator';
 
 @Component({
   selector: 'app-recover-pwd',
@@ -31,7 +31,7 @@ export class RecoverPwdComponent {
   mensajeError: string = '';
 
   constructor(private contrasenaService: AmazontService, private router: Router) {
-    this.correo = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100)], [correoExisteValidator(this.contrasenaService)]);
+    this.correo = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100), correoNoExisteValidator(this.contrasenaService)]);
     this.contrasena = new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(8), contrasenaFuerte()]);
     this.repetirContrasena = new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(8), contrasenaFuerte()]);
 
@@ -84,22 +84,25 @@ export class RecoverPwdComponent {
   }
 
   verificarContrasena(){
-    this.contrasenaService.cambiarContrasena(this.correoS, this.validarContrasena.value.contrasena).subscribe({
+    this.contrasenaService.verificarContrasena(this.correoS, this.validarContrasena.value.contrasena).subscribe({
       next: (data) => {
         console.log(data);
-        this.contrasenaCambiada = true;
         this.mensajeError = '';
+        this.contrasenaService.cambiarContrasena(this.correoS, this.validarContrasena.value.contrasena).subscribe({
+          next: (data) => {
+            console.log(data);
+            this.contrasenaCambiada = true;
+            this.mensajeError = '';
+          },
+          error: (err) => {
+            console.error('Error al cambiar la contraseña');
+            this.mensajeError = 'Error al cambiar la contraseña';
+          }
+        });
       },
       error: (err) => {
-        if (err.status === 404) {
-          console.error('El correo ingresado no existe');
-          this.mensajeError = 'El correo ingresado no existe';
-        } else if (err.status === 400) {
-          console.error('La nueva contraseña no puede ser igual a la actual');
-          this.mensajeError = 'La nueva contraseña no puede ser igual a la actual';
-        } else {
-          console.error('Error al cambiar la contraseña', err);
-        }
+        console.error('La nueva contraseña no puede ser igual a la actual');
+        this.mensajeError = 'La nueva contraseña no puede ser igual a la actual';
       }
     });
   }
