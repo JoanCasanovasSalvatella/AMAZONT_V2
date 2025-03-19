@@ -4,18 +4,80 @@
   </div>
 
   <div class="form">
-    <div class="content">
-      <h3 class="title">Restablece tu contraseña</h3>
-
-      <form action="">
-        <label for="correo" class="campos">Correo electrónico</label>
-        <input type="text" class="campos">
-
-        <label for="" class="campos">Nueva contraseña</label>
-        <input type="text" class="campos">
-
-        <button>Recuperar contraseña</button>
-      </form>
-    </div>
+    @if (!correoVerificado){
+      <div class="content">
+        <h3 class="title">Recuperar Contraseña</h3>
+        <form [formGroup]="validarCorreo">
+            <label for="correo" class="campos">Correo electrónico</label>
+            <input type="text" type="text" class="campos" placeholder="Correo electroico" [(ngModel)]="correoS" id="correo" formControlName="correo">
+            @if (correo.hasError('required') && correo.touched) {
+                <p>El CORREO es obligatorio</p>
+            } @else if (correo.hasError('email') && correo.touched) {
+                <p>El CORREO no es válido</p>
+            } @else if (correo.hasError('maxlength') && correo.touched) {
+                <p>El CORREO es muy largo</p>
+            }
+            <button (click)="enviarCorreo()">ENVIAR CODIGO</button>
+        </form>
+      </div>
+    }
+    @else if (!codigoVerificado) {
+      <div class="content">
+          <h3 class="title">Recuperar Contraseña</h3>
+          <label for="correo" class="campos">Codigo de recuperacion</label>
+          <input type="text" class="campos" placeholder="Codigo de verificacion de 5 digitos" class="form-control" [(ngModel)]="codigo">
+          <p *ngIf="mensajeError">{{ mensajeError }}</p>
+          <button (click)="verificarCodigo(codigo)">VERIFICAR CODIGO</button>
+      </div>
+    }
+    @else if (!contrasenaCambiada) {
+      <div class="content">
+          <h3 class="title">Recuperar Contraseña</h3>
+          <form [formGroup]="validarContrasena">
+              <label for="correo" class="campos">Nueva contraseña</label>
+              <input type="text" class="campos" placeholder="Nueva contraseña" [(ngModel)]="contrasenaS" (keyup)="coincidirContrasena()" id="contrasena" formControlName="contrasena">
+              @if (contrasena.hasError('required') && contrasena.touched) {
+                  <p>La CONTRASEÑA es obligatorio</p>
+              } @else if (contrasena.hasError('contrasenaFuerte') && contrasena.touched) {
+                  <p>La CONTRASEÑA no es valida</p>
+              } @else if (contrasena.hasError('maxlength') && contrasena.touched || contrasena.hasError('minlength') && contrasena.touched) {
+                  <p>La CONTRASEÑA no es valida</p>
+              } @else if (contrasena.valid && contrasena.touched) {
+                  <p class="valido">La CONTRASEÑA es fuerte</p>
+              }
+              <label for="correo" class="campos">Repetir nueva contraseña</label>
+              <input type="text" placeholder="Repetirorreo contraseña" [(ngModel)]="repetirContrasenaS" (keyup)="coincidirContrasena()" id="repetirContrasena" formControlName="repetirContrasena">
+              @if (repetirContrasena.hasError('required') && repetirContrasena.touched) {
+                  <p>La CONTRASEÑA es obligatorio</p>
+              } @else if (repetirContrasena.hasError('contrasenaFuerte') && repetirContrasena.touched) {
+                  <p>La CONTRASEÑA no es valida</p>
+              } @else if (repetirContrasena.hasError('maxlength') && repetirContrasena.touched || contrasena.hasError('minlength') && contrasena.touched) {
+                  <p>La CONTRASEÑA no es valida</p>
+              } @else if (repetirContrasena.valid && repetirContrasena.touched) {
+                  <p class="valido">La CONTRASEÑA es fuerte</p>
+              }
+              @if (contrasena.valid && contrasena.touched) {
+                  @if (repetirContrasena.valid && repetirContrasena.touched) {
+                      @if (coincidenContrasenas) {
+                          <p class="valido">Las CONTRASEÑAS coinciden</p>
+                      } @else {
+                          <p>Las CONTRASEÑAS NO coinciden</p>
+                      }
+                  }
+              }
+              @if (mensajeError) {
+                <p>{{ mensajeError }}</p>
+              }
+              <button (click)="verificarContrasena()">VERIFICAR CODIGO</button>
+          </form>
+      </div>
+    }
+    @else if (codigoVerificado) {
+      <div class="content">
+          <h3 class="title">Contraseña Recuperada</h3>
+          <label for="correo" class="campos">Contraseña cambiada con exito</label>
+          <button routerLink="/login">INICIAR SESION</button>
+      </div>
+    }
   </div>
 </div>

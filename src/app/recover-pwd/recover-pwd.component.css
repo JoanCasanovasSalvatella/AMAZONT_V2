@@ -1,8 +1,16 @@
 /*Imports de fuentes*/
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
 
-
 /*..................*/
+
+p{
+  color: red;
+  font-size: 12px;
+}
+.valido{
+  color: green;
+  font-size: 12px;
+}
 
 *{
   font-family:'Rubik';

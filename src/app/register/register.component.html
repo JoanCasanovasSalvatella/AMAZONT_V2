@@ -37,7 +37,7 @@
     }
     <br>
     <br>
-    <input type="text" placeholder="Repetir Contraseña" id="repetirContrasena" formControlName="repetirContrasena">
+    <input type="text" placeholder="Repetir Contraseña" id="repetirContrasena" formControlName="repetirContrasena" (keyup)="coincideContrasena()">
     @if (repetirContrasena.hasError('required') && repetirContrasena.touched) {
       <p>La CONTRASEÑA es obligatorio</p>
     } @else if (repetirContrasena.hasError('contrasenaFuerte') && repetirContrasena.touched) {
@@ -72,7 +72,7 @@
       <p>{{ mensajeEstado }}</p>
     }
     <br>
-    <button [disabled]="registro.invalid" (click)="registerUser()">Registrarme</button>
+    <button (click)="registerUser()">Registrarme</button>
   </form>
 
   <a routerLink="/login">Ya Tengo Una Cuenta</a>

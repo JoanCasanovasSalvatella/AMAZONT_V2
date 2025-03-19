@@ -40,7 +40,7 @@ export class AmazontService {
 
   //LOGIN, REGISTRO, RECUPERAR CONTRASEÑA
   verificarCorreo(email: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/user/VerifyEmail`, email);
+    return this.http.post(`${this.apiUrl}/user/VerifyEmail`, { email: email });
   }
 
   //LOGIN
@@ -55,16 +55,16 @@ export class AmazontService {
 
   //RECUPERAR CONTRASEÑA
   enviarCodigo(email: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/user/SendCode`, email);
+    return this.http.post<any>(`${this.apiUrl}/user/SendCode`, { email: email });
   }
-  verificarCodigo(code: number): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/user/VerifyCode`, code);
+  verificarCodigo(email: string, code: string | null): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/VerifyCode`, { email: email, code: code } );
   }
-  verificarContrasena(password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/user/VerifyPassword`, password);
+  verificarContrasena(email: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/VerifyPassword`, { email: email, password: password });
   }
   cambiarContrasena(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/user/ChangePassword`, { email, password });
+    return this.http.post<any>(`${this.apiUrl}/user/ChangePassword`, { email: email, password: password });
   }
 
   //CATEGORIA

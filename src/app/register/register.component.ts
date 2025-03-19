@@ -4,11 +4,12 @@ import { Router, RouterLink } from '@angular/router';
 import { AmazontService } from '../services/amazont.service';
 import { contrasenaFuerte } from '../validators/contrasena-validator';
 import { correoExisteValidator } from '../validators/verificarCorreo-validator';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [RouterLink, ReactiveFormsModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

@@ -21,10 +21,10 @@
           <p>La CONTRASEÑA es obligatorio</p>
         }
         <br><br>
-        <a routerLink="" class="recover" aria-label="forgoten password link">He olvidado mi contraseña</a>
+        <a routerLink="/recoverPassword" class="recover" aria-label="forgoten password link">He olvidado mi contraseña</a>
         <br>
         <br>
-        <button [disabled]="login.invalid" class="login" (click)="loginUser()" aria-label="login button">Iniciar Sesion</button>
+        <button class="login" (click)="loginUser()" aria-label="login button">Iniciar Sesion</button>
       </form>
       <br>
       @if (mensajeEstado) {
