@@ -85,16 +85,18 @@
   .menu.menu-resized {
     width: 70%; /* Nuevo tamaño cuando el menú se redimensiona */
     transform: translateX(0);
+    justify-items: center;
   }
 
     .namePage{
-      width: 160px;
+      width: 116px;
+
     }
 
     .elemento{
       display: flex;
       gap: 4px;
-      margin-left: -5px;
+      margin-left: -45px;
     }
 
     .icono{
