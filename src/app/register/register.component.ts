@@ -27,7 +27,7 @@ export class RegisterComponent {
 
   constructor(private amazontService: AmazontService, private router: Router) {
     this.nombre = new FormControl('', [Validators.required, Validators.maxLength(100)]);
-    this.correo = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100)], [correoExisteValidator(this.amazontService)]);
+    this.correo = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100), correoExisteValidator(this.amazontService)]);
     this.contrasena = new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(8), contrasenaFuerte()]);
     this.repetirContrasena = new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(8), contrasenaFuerte()]);
     this.rol = new FormControl('', [Validators.required])
@@ -42,7 +42,7 @@ export class RegisterComponent {
   }
 
   coincideContrasena() {
-    if (this.registro.value.contrasena === this.registro.value.contrasena) {
+    if (this.registro.value.contrasena === this.registro.value.repetirContrasena) {
       this.coincidenContrasenas = true;
     } else {
       this.coincidenContrasenas = false;

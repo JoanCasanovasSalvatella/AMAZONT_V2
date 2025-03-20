@@ -1,7 +1,7 @@
 <div class="cuerpo">
   <div class="logo">
     <img src="assets/icon.png" alt="logo" class="icon"><!--Logotipo de la empresa-->
-    <h2>Bienvenido de vuelta</h2>
+    <h2>Bienvenido a Amazon't</h2>
   </div>
 <div class="container">
   <h3>REGISTRATE</h3>
@@ -18,6 +18,8 @@
     <input type="text" placeholder="Correo Electronico" id="correo" formControlName="correo">
     @if (correo.hasError('required') && correo.touched) {
       <p>El CORREO es obligatorio</p>
+    } @else if (correo.hasError('correoExiste') && correo.touched) {
+      <p>El CORREO ya esta registrado</p>
     } @else if (correo.hasError('email') && correo.touched) {
       <p>El CORREO no es valido</p>
     } @else if (correo.valid && correo.touched) {
@@ -25,7 +27,7 @@
     }
     <br>
     <br>
-    <input type="text" placeholder="Contraseña" id="contrasena" formControlName="contrasena">
+    <input type="text" placeholder="Contraseña" id="contrasena" formControlName="contrasena" (keyup)="coincideContrasena()">
     @if (contrasena.hasError('required') && contrasena.touched) {
       <p>La CONTRASEÑA es obligatorio</p>
     } @else if (contrasena.hasError('contrasenaFuerte') && contrasena.touched) {
@@ -52,7 +54,7 @@
     <select id="roles" formControlName="rol">
       <option value="" disabled selected>--Elije un rol--</option>
       <option value="Cliente">Cliente</option>
-      <option value="Administrador">Vendedor</option>
+      <option value="Vendedor">Vendedor</option>
     </select>
     @if (rol.hasError('required') && rol.touched) {
       <p>Porfavor, elija un rol</p>
@@ -72,7 +74,7 @@
       <p>{{ mensajeEstado }}</p>
     }
     <br>
-    <button (click)="registerUser()">Registrarme</button>
+    <button [disabled]="registro.invalid" (click)="registerUser()">Registrarme</button>
   </form>
 
   <a routerLink="/login">Ya Tengo Una Cuenta</a>
