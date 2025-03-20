@@ -20,7 +20,7 @@ export class LoginComponent {
   mensajeEstado: string = '';
 
   constructor(private amazontService: AmazontService, private router: Router) {
-    this.correo = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100)], [correoNoExisteValidator(this.amazontService)]);
+    this.correo = new FormControl('', [Validators.required, Validators.email, Validators.maxLength(100), correoNoExisteValidator(this.amazontService)]);
     this.contrasena = new FormControl('', [Validators.required, Validators.maxLength(16), Validators.minLength(8)]);
 
     this.login = new FormGroup({

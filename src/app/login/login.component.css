@@ -5,7 +5,7 @@
 .cuerpo{
   background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2h8ZW58MHx8MHx8fDA%3D");
   width:1280px;
-  height: 795px;
+  height: 100vh;
   margin-top: -20px
 }
 
@@ -36,6 +36,8 @@ p{
   border: 1px solid;
   justify-items: center;
   text-align: center;
+  background-color: rgba(255,255,255, 0.6);
+  border-radius: 10px;
 }
 
 .login{

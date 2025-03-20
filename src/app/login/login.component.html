@@ -11,6 +11,8 @@
         <input type="text" placeholder="Correo Electronico" id="correo" formControlName="correo">
         @if (correo.hasError('required') && correo.touched) {
           <p>El CORREO es obligatorio</p>
+        } @else if (correo.hasError('correoNoExiste') && correo.touched) {
+          <p>El CORREO no esta registrado</p>
         } @else if (correo.hasError('email')) {
           <p>El CORREO no es valido</p>
         }
@@ -24,7 +26,7 @@
         <a routerLink="/recoverPassword" class="recover" aria-label="forgoten password link">He olvidado mi contraseña</a>
         <br>
         <br>
-        <button class="login" (click)="loginUser()" aria-label="login button">Iniciar Sesion</button>
+        <button [disabled]="login.invalid" class="login" (click)="loginUser()" aria-label="login button">Iniciar Sesion</button>
       </form>
       <br>
       @if (mensajeEstado) {
