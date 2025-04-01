@@ -1,15 +1,21 @@
   <!--Div encargado de contener el menu superior-->
   <div class="encabezado" id="head">
     <div class="left">
-      <img src="assets/amazon-logo.png" alt="" class="icon" routerLink="/" aria-label="logotipo">
+      <!--<img src="assets/amazon-logo.png" alt="" class="icon" routerLink="/" aria-label="logotipo">-->
+      <picture class="logo-container">
+        <source srcset="assets/amazon_logo_mobile.webp" media="(max-width: 425px)" routerLink="/">
+        <img src="assets/amazon-logo.png" alt="Logotipo" class="logo" aria-label="logotipo" routerLink="/">
+      </picture>
       <input type="search" class="busqueda" placeholder="🔍 Buscar" aria-label="barra de busqueda">
     </div>
+
       <h2 aria-label="Amazont">AMAZON'T</h2>
+
       <div class="right">
         <button class="menuIcon" routerLink="/login" aria-label="login/registro"></button>
-        <button class="darkMode" (click)="darkMode()" aria-label="modo oscuro"></button>
-        <button class="chart" aria-label="carrito"></button>
+        <button class="darkMode"(click)="darkMode()" aria-label="modo oscuro"></button>
+        <button class="chart" routerLink="/shopping_cart" aria-label="carrito"></button>
       </div>
-  </div>
+    </div>
   <router-outlet/>
 

@@ -41,15 +41,17 @@
   height: 40px;
   padding: 5px;
   font-size: 16px;
-  margin-left: 3px; /* Espaciado después del botón chart */
+  margin-left: 17vw; /* Espaciado después del botón chart */
   background-color: lightgrey;
   border-radius: 10px;
 }
 
 .left{
   float: left;
+  display: flex;
   width: 35%;
   margin-right: -180px;
+  margin-top: 2vh;
 }
 
 .right{
@@ -127,21 +129,48 @@ h3{
   margin-left: 0vw;
 }
 
-@media (max-width: 400px) {
-  body{
-    width: 70%;
-    margin: 0px;
+.logo-container{
+  width: 10vw;
+}
+
+.logo {
+  width: 120px; /* Reducir tamaño en móviles */
+  float: left;
+  margin-top: 1vh;
+}
+
+@media (max-width: 425px){
+  .logo {
+    width: 40px; /* Reducir tamaño en móviles */
+    float: left;
+    margin-top: -1vh;
   }
 
   .encabezado{
     margin: 0;
     border-bottom: 2px solid black;
-    width: 155vh;
-    gap: 2px;
+    width: 107.3vw;
+    justify-content: center;
+    gap: 7px;
   }
 
-  .icon, .menuIcon, .darkMode, .chart{
-    margin-right: -30vh;
+  .left{
+    width: 60%;
+    gap: 10vw;
+  }
+
+  .right{
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    float: right;
+  }
+
+  img .icon{
+    width: 100%;
+    height: auto;
+    margin: 0px;
   }
 
   .menuIcon{
@@ -152,16 +181,17 @@ h3{
     background-position:center;
     border: none;
     background-color: transparent;
+    margin-left: 0vw;
   }
 
   .darkMode{
     border-radius: 100%;
-    /*padding: 20px;*/
     background-image: url('../assets/dark.png');
     background-size:cover;
     background-position:center;
     border: none;
     background-color: transparent;
+    margin: 0px;
   }
 
   .chart{
@@ -170,28 +200,213 @@ h3{
     background-size: cover;
     background-position:center;
     border: none;
-    background-color: white;
-    margin-right: 60vh;
-    margin-left: -30vh;
+    background-color: transparent;
+    margin: 0px;
   }
 
-  .chart,.menuIcon, .icon, .dark_mode{
-    width: 36px;
-    height: 36px;
+  .chart,.menuIcon, .dark_mode{
+    width: 45px;
+    height: 45px;
   }
 
   h2{
     font-size: 25px;
-    margin-left: -30px;
+    margin-left: 10vw;
   }
 
   .busqueda {
-    max-width: 150px; /* Ancho máximo del input */
+    width: 20%; /* Usar un ancho relativo en móviles */
+    max-width: 80px; /* Asegurar que no sea demasiado ancho */
     height: 30px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: lightgrey;
     border-radius: 20px;
-    margin-right: 170px;
-    margin-left: -550px;
+    margin-left: -30px;
+    margin-top:-5px;
+    display: block;
 }
+}
+
+@media (max-width: 375px){
+  .logo {
+    width: 80px; /* Reducir tamaño en móviles */
+    float: left;
+    margin-top: -1vh;
+  }
+
+  .encabezado{
+    margin: 0;
+    border-bottom: 2px solid black;
+    width: 334vw;
+    justify-content: center;
+    gap: 7px;
+    height: 20vh;
+  }
+
+  .left{
+    width: 60%;
+    gap: 10vw;
+    font-size: 75px;
+  }
+
+  .right{
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    float: right;
+  }
+
+  img .icon{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .menuIcon{
+    border-radius: 100%;
+    padding: 20px;
+    background-image: url('../assets/avatarPFP.png');
+    background-size:cover;
+    background-position:center;
+    border: none;
+    background-color: transparent;
+    margin-left: 0vw;
+  }
+
+  .darkMode{
+    border-radius: 100%;
+    background-image: url('../assets/dark.png');
+    background-size:cover;
+    background-position:center;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    width: 105px;
+    height: 105px;
+  }
+
+  .chart{
+    border-radius: 100%;
+    background-image: url('../assets/chart.png');
+    background-size: cover;
+    background-position:center;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+  }
+
+  .chart,.menuIcon, .dark_mode{
+    width: 105px;
+    height: 105px;
+  }
+
+  h2{
+    font-size: 50px;
+    margin-left: 0vw;
+  }
+
+  .busqueda {
+    width: 100%; /* Usar un ancho relativo en móviles */
+    max-width: 260px; /* Asegurar que no sea demasiado ancho */
+    height: 60px;
+    font-size: 40px;
+    background-color: lightgrey;
+    border-radius: 20px;
+    margin-left: 60px;
+    margin-top:5px;
+    display: block;
+  }
+}
+
+@media (max-width: 320px){
+  .logo {
+    width: 80px; /* Reducir tamaño en móviles */
+    float: left;
+    margin-top: -1vh;
+  }
+
+  .encabezado{
+    margin: 0;
+    border-bottom: 2px solid black;
+    width: 391vw;
+    justify-content: center;
+    gap: 7px;
+    height: 20vh;
+  }
+
+  .left{
+    width: 60%;
+    gap: 10vw;
+    font-size: 75px;
+  }
+
+  .right{
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    float: right;
+  }
+
+  img .icon{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+  }
+
+  .menuIcon{
+    border-radius: 100%;
+    padding: 20px;
+    background-image: url('../assets/avatarPFP.png');
+    background-size:cover;
+    background-position:center;
+    border: none;
+    background-color: transparent;
+    margin-left: 0vw;
+  }
+
+  .darkMode{
+    border-radius: 100%;
+    background-image: url('../assets/dark.png');
+    background-size:cover;
+    background-position:center;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+    width: 105px;
+    height: 105px;
+  }
+
+  .chart{
+    border-radius: 100%;
+    background-image: url('../assets/chart.png');
+    background-size: cover;
+    background-position:center;
+    border: none;
+    background-color: transparent;
+    margin: 0px;
+  }
+
+  .chart,.menuIcon, .dark_mode{
+    width: 105px;
+    height: 105px;
+  }
+
+  h2{
+    font-size: 50px;
+    margin-left: -50vw;
+  }
+
+  .busqueda {
+    width: 100%; /* Usar un ancho relativo en móviles */
+    max-width: 260px; /* Asegurar que no sea demasiado ancho */
+    height: 60px;
+    font-size: 40px;
+    background-color: lightgrey;
+    border-radius: 20px;
+    margin-left: 60px;
+    margin-top:5px;
+    display: block;
+  }
 }
