@@ -1,0 +1,54 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="body">
+  <div class="icon">
+    <i class="fa-solid fa-bag-shopping"></i>
+    <h2 class="title">Agregar un producto</h2>
+  </div>
+
+  <form action="">
+    <!-- Nombre del producto -->
+    <label for="nombre" class="formInp">Nombre del producto</label>
+    <input type="text" id="nombre">
+
+    <!-- Si está en oferta -->
+    <label for="oferta" class="formInp">¿Está en oferta?</label><br>
+    <div class="options">
+      <input type="checkbox" id="offer-yes" name="offer" value="Sí">
+      <label for="offer-yes" class="choice">Sí</label>
+    </div>
+
+    <!-- Imagen del producto -->
+    <label for="imagen" class="formInp">Imagen del producto (URL)</label>
+    <input type="text" id="imagen">
+
+    <!-- Descripción del producto -->
+    <label for="descripcion" class="formInp">Descripción</label>
+    <input type="text" id="descripcion">
+
+    <!-- Precio actual -->
+    <label for="precio" class="formInp">Precio actual</label>
+    <input type="text" id="precio">
+
+    <!-- Precio anterior -->
+    <label for="precioAnte" class="formInp">Precio anterior</label>
+    <input type="text" id="precioAnte">
+
+    <!-- Cantidad disponible -->
+    <label for="cantidad" class="formInp">Cantidad disponible</label>
+    <input type="text" id="cantidad">
+
+    <!-- Categoría (selección) -->
+    <label for="categoria" class="formInp">Categoría</label><br>
+    <select id="categoria">
+      <option value="electronica">Electrónica</option>
+      <option value="ropa">Ropa</option>
+      <option value="alimentos">Alimentos</option>
+      <option value="otros">Otros</option>
+    </select>
+
+    <input type="button" value="Agregar" class="addButton" routerLink="/add_product">
+  </form>
+</div>
+
