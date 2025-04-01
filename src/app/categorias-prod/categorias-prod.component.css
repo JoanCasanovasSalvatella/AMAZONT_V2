@@ -108,3 +108,15 @@
       font-family: 'Rubik';
       font-size: 16px;
     }
+
+    @media (max-width: 425px){
+      .categoryPage{
+        width:100vw;
+      }
+
+      .productos{
+        width: 100%;
+        font-size: 16px;
+        margin-left: 0vw;
+      }
+    }
