@@ -1,0 +1,26 @@
+<!-- Import de iconos de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="main">
+  <p> </p>
+</div>
+<img src="assets/pfp_default.jpg" alt="fotografia de perfil" class="perfil">
+<div class="datos">
+  <div class="a">
+    <h2 class="data">Nickname</h2>
+    <button class="update"><i class="fa-solid fa-pen-to-square"></i></button>
+  </div>
+  <div class="a">
+    <i class="fa-duotone fa-solid fa-envelope custom-icon"></i><p>samplemail&#64;gmail.com</p>
+  </div>
+  <br><br><br>
+  <div class="options">
+    <button routerLink="/profile/data" class="extraOption">Perfil</button>
+    <button routerLink="/profile/user_record" class="extraOption">Historial de productos</button>
+    <button routerLink="/profile/user_pay_method" class="extraOption">Mis metodos de pago</button>
+  </div>
+  <router-outlet></router-outlet>
+
+</div>
+
+

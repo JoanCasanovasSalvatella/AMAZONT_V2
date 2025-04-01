@@ -1,0 +1,20 @@
+<div>
+  <h4>Historial de pedidos</h4>
+  <p class="subtitle">Aquí puedes ver tus ultimos pedidos</p><br>
+
+  <div class="datos">
+
+  </div><br>
+
+  <div class="bottom">
+    <button class="update">Cancelar</button>
+    <button class="update">Actualizar</button>
+  </div>
+
+  <!--Si el usuario es vendedor se le mostrara un boton para gestionar sus productos-->
+  @if(vendedor == true){
+    <button class="gestion" routerLink="/add_product">Agregar producto</button>
+    <button class="gestion" routerLink="/update_product">Modificar producto</button>
+    <button class="gestion">Ver ventas</button>
+  }
+</div>
