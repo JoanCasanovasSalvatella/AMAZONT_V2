@@ -7,7 +7,7 @@
     <h3 aria-label="product_name">{{item.nombre}}</h3>
     <p aria-label="product_description">{{item.desc}}</p>
     <div [ngClass] = "{'precios' : 'precio1'}">
-      <p [ngClass]="{'precio': 'price1'}" aria-label="product_price">{{item.precio}}</p>
+      <button [ngClass]="{'precio': 'price1'}" aria-label="product_price" (click)="agregarProd(item)">{{item.precio}} €</button>
     </div>
   </div>
   }
@@ -20,7 +20,7 @@
     <div class="prod2" role="listitem">
         <img src="{{item.imagen}}" alt="imagen del producto {{item.nombre}}" [ngClass]="{'producto' : 'producto1'}" aria-label="product_image">
         <h3 aria-label="product_name">{{item.nombre}}</h3>
-        <p aria-label="product_description">{{item.desc}}</p><br>
+        <p aria-label="product_description" class="offerDesc">{{item.desc}}</p><br>
         <div [ngClass] = "{'preciosOfer' : 'precio1'}">
           <p [ngClass]="{'oferta' : 'precio1'}" aria-label="offer">{{item.precioAnterior}}</p>
           <p [ngClass]="{'precio2' : 'precio1'}" aria-label="offer_price">{{item.precio}}</p>
