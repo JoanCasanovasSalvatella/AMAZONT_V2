@@ -149,13 +149,13 @@ h3{
   .encabezado{
     margin: 0;
     border-bottom: 2px solid black;
-    width: 107.3vw;
+    width: 200vw;
     justify-content: center;
     gap: 7px;
   }
 
   .left{
-    width: 60%;
+    width: 50%;
     gap: 10vw;
   }
 
@@ -232,19 +232,20 @@ h3{
     width: 80px; /* Reducir tamaño en móviles */
     float: left;
     margin-top: -1vh;
+    margin-left: 0px;
   }
 
   .encabezado{
     margin: 0;
     border-bottom: 2px solid black;
-    width: 334vw;
+    width: 320vw;
     justify-content: center;
     gap: 7px;
     height: 20vh;
   }
 
   .left{
-    width: 60%;
+    width: 50%;
     gap: 10vw;
     font-size: 75px;
   }
@@ -314,7 +315,7 @@ h3{
     background-color: lightgrey;
     border-radius: 20px;
     margin-left: 60px;
-    margin-top:5px;
+    margin-top:1px;
     display: block;
   }
 }
