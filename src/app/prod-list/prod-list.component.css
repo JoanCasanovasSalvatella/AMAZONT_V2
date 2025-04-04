@@ -55,94 +55,82 @@ h2{
   text-align: center;
 }
 
-@media (max-width: 1200px) {
-  .card {
-    width: 60%;
-    margin-left: 10px;
+@media (max-width: 425px) {
+  *{
+    font-size: 18px;
   }
-  .lowContnt {
-    gap: 150px;
+  .filtros{
+    width: 90%;
+    display: grid;
+    font-size: 20px;
+    margin-left: 0vw;
+    justify-self: center;
+    gap: 10px;
   }
-}
 
-@media (max-width: 768px) {
-  .card {
-    width: 80%;
-    margin-left: 5px;
-  }
-  .lowContnt {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .desc, .precio {
-    width: 100%;
+  .listaProductos{
+    margin: 2vw;
+    justify-self: center;
     text-align: center;
-    float: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .filtros {
-    font-size: 40px;
-    margin-left: 80vw;
   }
 
-  input{
-    font-size: 50px;
-    border: #d7d7d7;
-  }
-
-  button{
-    font-size: 50px;
+  .card {
     width: 90vw;
-    background-color: #fcbb5b;
-    border: none;
+    height: auto;
+    margin-left: 0px;
+  }
+  .lowContnt {
+    gap: 5px;
+    text-align: center;
+    justify-self: center;
+    flex-wrap: wrap;
+    display: grid;
   }
 
-  button:hover{
-   color: white;
-  }
-
-  .clear{
-    min-height: 10vh;
-    font-family: Arial;
-  }
-
-  h2, h3{
-    font-size: 60px;
+  .desc{
+    text-align: center;
+    justify-self: center;
     justify-content: center;
-    margin-left: 50%;
-    margin-right: 50%;
-    width: 200vw;
+    align-items: center;
+    width: 100%;
+  }
+
+  .precio p{
+    margin-top: 20px;
+    text-align: center;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 2vw;
+  }
+
+  h2{
+    font-size: 20px;
+    margin-left: 0vw;
+  }
+
+  h3{
+    font-size: 20px;
+    margin-left: 0vw;
+    white-space: nowrap;
+    justify-self: center;
   }
 
   p{
-    font-size: 45px;
+    text-align: center;
+    justify-self: center;
+    width: 50vw;
+    flex-wrap: wrap;
   }
 
-  .card {
-    width: 100%;
+  .price{
     text-align: center;
+    justify-self: left;
+    margin-left: -45vw;
   }
-  .listaProductos {
+
+  .container{
     margin-left: 10px;
-    margin-right: 10px;
-    gap: 20px;
-    justify-content: center;
-  }
-  img {
-    width: 310vw;
-    height: auto;
-  }
-  .lowContnt {
-    gap: 10px;
-    width: 200vw;
-    margin-left: 50%;
-    margin-right: 50%;
-  }
-  .precio {
-    margin-left: 50%;
-    margin-right: 50%;
-    justify-content: center;
   }
 }
