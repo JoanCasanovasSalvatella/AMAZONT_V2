@@ -20,6 +20,7 @@ export class CarritoComponent {
   constructor(private amazontService: AmazontService) {
     //Obtener los productos añadidos
     this.carrito = this.amazontService.getCarrito();
+    this.productos = this.amazontService.productos
   }
 
     ngOnInit(): void {
@@ -29,5 +30,18 @@ export class CarritoComponent {
     empezarCompra(){
       this.procesoCompra = false;
     }
+
+    aumentar(producto: any) {
+      producto.cantidad +=1;
+    }
+
+    disminuir(producto: any) {
+      if (producto.cantidad >= 1) {
+        producto.cantidad -=1;
+      }else {
+        this.carrito = this.carrito.filter(item => item.id !== producto.id);
+      }
+    }
+
 
 }

@@ -74,6 +74,15 @@ i{
   color: #f7b733;
 }
 
+.trash{
+  margin-left: 10px;
+  color: rgba(255, 0, 0, 0.893);
+}
+
+.add{
+  margin-left: 50px;
+}
+
 @media (max-width: 425px){
   .prod{
     display: flex;
