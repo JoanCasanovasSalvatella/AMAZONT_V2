@@ -26,7 +26,7 @@
         <a routerLink="/recoverPassword" class="recover" aria-label="forgoten password link">He olvidado mi contraseña</a>
         <br>
         <br>
-        <button [disabled]="login.invalid" class="login" (click)="loginUser()" aria-label="login button">Iniciar Sesion</button>
+        <button [disabled]="login.invalid" class="login" (click)="loginUser()" aria-label="login button" routerLink="/profile">Iniciar Sesion</button>
       </form>
       <br>
       @if (mensajeEstado) {
