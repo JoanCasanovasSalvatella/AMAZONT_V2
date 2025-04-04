@@ -15,7 +15,7 @@
 
 i{
   font-size: 60px;
-  color: #ff6214c0;
+  color: #f7b733;
 }
 
 input{
@@ -26,7 +26,7 @@ input{
 }
 
 input[type="submit"]{
-  background-color: #ff6214c0;
+  background-color: #f7b733;
   width: 20vw;
   height: 5vh;
   border-radius: 7px;
